@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">NestedScrollingTest</string>
+
+    <string name="large_text">"NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
+        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9"</string>
+</resources>
