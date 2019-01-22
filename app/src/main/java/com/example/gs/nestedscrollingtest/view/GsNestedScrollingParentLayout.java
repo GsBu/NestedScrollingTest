@@ -9,6 +9,7 @@ import android.support.v4.view.NestedScrollingParent2;
 import android.support.v4.view.NestedScrollingParentHelper;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
@@ -52,12 +53,13 @@ public class GsNestedScrollingParentLayout extends LinearLayout implements Neste
     protected void onFinishInflate() {
         super.onFinishInflate();
         final View firstChild = this.getChildAt(0);
-        if (firstChild == null)
-            throw new IllegalStateException(String.format("%s must own a child view", GsNestedScrollingParentLayout.class.getSimpleName()));
+        if (firstChild == null) {
+            throw new IllegalStateException(String.format("%s must own a child view", TAG));
+        }
         firstChild.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                GsNestedScrollingParentLayout.this.mFirstChildHeight = firstChild.getMeasuredHeight();
+                mFirstChildHeight = firstChild.getMeasuredHeight();
                 firstChild.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
@@ -77,19 +79,21 @@ public class GsNestedScrollingParentLayout extends LinearLayout implements Neste
 
     @Override
     public void onNestedPreScroll(@NonNull View target, int dx, int dy, @NonNull int[] consumed, int type) {
-        boolean isFirstChildVisible = (dy > 0 && this.getScrollY() < this.mFirstChildHeight)
+        /*Log.e(TAG, "dy="+dy+" this.getScrollY()="+this.getScrollY()
+                +" target.getScrollY()="+target.getScrollY());*/
+        boolean isFirstChildVisible = (dy > 0 && this.getScrollY() < mFirstChildHeight)
                 || (dy < 0 && target.getScrollY() <= 0);
         if (isFirstChildVisible) {
             //consume dy
             consumed[1] = dy;
-            this.scrollBy(0, dy);
+            scrollBy(0, dy);
         }
     }
 
     @Override
     public void onNestedScroll(@NonNull View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed, int type) {
-    }
 
+    }
 
     @Override
     public void onStopNestedScroll(@NonNull View target, int type) {
@@ -98,8 +102,19 @@ public class GsNestedScrollingParentLayout extends LinearLayout implements Neste
 
     @Override
     public void scrollTo(int x, int y) {
-        y = y < 0 ? 0 : y;
-        y = y > this.mFirstChildHeight ? this.mFirstChildHeight : y;
+        Log.e(TAG, "scrollTo x="+x+" y="+y);
+        if(y < 0){
+            y = 0;
+        }
+        if(y > mFirstChildHeight){
+            y = mFirstChildHeight;
+        }
         super.scrollTo(x, y);
+    }
+
+    @Override
+    public void scrollBy(int x, int y) {
+        Log.e(TAG, "scrollBy x="+x+" y="+y);
+        super.scrollBy(x, y);
     }
 }

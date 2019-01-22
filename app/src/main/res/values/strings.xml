@@ -1,18 +1,65 @@
 <resources>
     <string name="app_name">NestedScrollingTest</string>
 
-    <string name="large_text">"NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9\n
-        NestedScrollingTest\n2\n3\n4\n5\n6\n7\n8\n9"</string>
+    <string name="large_text">"super.onCreate(savedInstanceState);setContentView(R.layout.scroll_layout);ImageView imageView = (ImageView) findViewById(R.id.scrollImageView);
+		TextView textView = (TextView) findViewById(R.id.textView);
+		textView.setText("getScrollX() = " + imageView.getScrollX());
+		ImageView imageViewToRight = (ImageView) findViewById(R.id.scrollImageViewToRight);
+		imageViewToRight.scrollTo(-100, 0);
+		TextView textViewToRight = (TextView) findViewById(R.id.textViewToRight);
+		textViewToRight.setText("getScrollX() = " + imageViewToRight.getScrollX());
+		ImageView imageViewToLeft = (ImageView) findViewById(R.id.scrollImageViewToLeft);
+		imageViewToLeft.scrollTo(100, 0);
+		TextView textViewToLeft = (TextView) findViewById(R.id.textViewToLeft);
+		textViewToLeft.setText("getScrollX() = " + imageViewToLeft.getScrollX());
+---------------------
+作者：linmiansheng
+来源：CSDN
+原文：https://blog.csdn.net/linmiansheng/article/details/17767795
+版权声明：本文为博主原创文章，转载请附上博文链接！super.onCreate(savedInstanceState);setContentView(R.layout.scroll_layout);ImageView imageView = (ImageView) findViewById(R.id.scrollImageView);
+		TextView textView = (TextView) findViewById(R.id.textView);
+		textView.setText("getScrollX() = " + imageView.getScrollX());
+		ImageView imageViewToRight = (ImageView) findViewById(R.id.scrollImageViewToRight);
+		imageViewToRight.scrollTo(-100, 0);
+		TextView textViewToRight = (TextView) findViewById(R.id.textViewToRight);
+		textViewToRight.setText("getScrollX() = " + imageViewToRight.getScrollX());
+		ImageView imageViewToLeft = (ImageView) findViewById(R.id.scrollImageViewToLeft);
+		imageViewToLeft.scrollTo(100, 0);
+		TextView textViewToLeft = (TextView) findViewById(R.id.textViewToLeft);
+		textViewToLeft.setText("getScrollX() = " + imageViewToLeft.getScrollX());
+---------------------
+作者：linmiansheng
+来源：CSDN
+原文：https://blog.csdn.net/linmiansheng/article/details/17767795
+版权声明：本文为博主原创文章，转载请附上博文链接！super.onCreate(savedInstanceState);setContentView(R.layout.scroll_layout);ImageView imageView = (ImageView) findViewById(R.id.scrollImageView);
+		TextView textView = (TextView) findViewById(R.id.textView);
+		textView.setText("getScrollX() = " + imageView.getScrollX());
+		ImageView imageViewToRight = (ImageView) findViewById(R.id.scrollImageViewToRight);
+		imageViewToRight.scrollTo(-100, 0);
+		TextView textViewToRight = (TextView) findViewById(R.id.textViewToRight);
+		textViewToRight.setText("getScrollX() = " + imageViewToRight.getScrollX());
+		ImageView imageViewToLeft = (ImageView) findViewById(R.id.scrollImageViewToLeft);
+		imageViewToLeft.scrollTo(100, 0);
+		TextView textViewToLeft = (TextView) findViewById(R.id.textViewToLeft);
+		textViewToLeft.setText("getScrollX() = " + imageViewToLeft.getScrollX());
+---------------------
+作者：linmiansheng
+来源：CSDN
+原文：https://blog.csdn.net/linmiansheng/article/details/17767795
+版权声明：本文为博主原创文章，转载请附上博文链接！super.onCreate(savedInstanceState);setContentView(R.layout.scroll_layout);ImageView imageView = (ImageView) findViewById(R.id.scrollImageView);
+		TextView textView = (TextView) findViewById(R.id.textView);
+		textView.setText("getScrollX() = " + imageView.getScrollX());
+		ImageView imageViewToRight = (ImageView) findViewById(R.id.scrollImageViewToRight);
+		imageViewToRight.scrollTo(-100, 0);
+		TextView textViewToRight = (TextView) findViewById(R.id.textViewToRight);
+		textViewToRight.setText("getScrollX() = " + imageViewToRight.getScrollX());
+		ImageView imageViewToLeft = (ImageView) findViewById(R.id.scrollImageViewToLeft);
+		imageViewToLeft.scrollTo(100, 0);
+		TextView textViewToLeft = (TextView) findViewById(R.id.textViewToLeft);
+		textViewToLeft.setText("getScrollX() = " + imageViewToLeft.getScrollX());
+---------------------
+作者：linmiansheng
+来源：CSDN
+原文：https://blog.csdn.net/linmiansheng/article/details/17767795
+版权声明：本文为博主原创文章，转载请附上博文链接！"</string>
 </resources>

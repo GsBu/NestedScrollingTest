@@ -8,6 +8,7 @@ import android.support.v4.view.NestedScrollingChild2;
 import android.support.v4.view.NestedScrollingChildHelper;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
@@ -18,6 +19,7 @@ import android.widget.LinearLayout;
  * 描述
  */
 public class GsNestedScrollingChildLayout extends LinearLayout implements NestedScrollingChild2 {
+    private final static String TAG = GsNestedScrollingChildLayout.class.getSimpleName();
 
     private NestedScrollingChildHelper mChildHelper;
     private int mViewHeight;
@@ -83,23 +85,32 @@ public class GsNestedScrollingChildLayout extends LinearLayout implements Nested
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                this.mLastMotionY = (int) event.getY();
-                this.startNestedScroll(ViewCompat.SCROLL_AXIS_VERTICAL, ViewCompat.TYPE_TOUCH);
+                //这里不能使用getY，因为getY是该组件在父布局中的Y坐标，他在父组件中不断变化
+                mLastMotionY = (int) event.getRawY();
+                int i1 = (int) event.getY();
+                Log.e(TAG, "按下 getRawY="+mLastMotionY+" getY="+i1);
+                startNestedScroll(ViewCompat.SCROLL_AXIS_VERTICAL, ViewCompat.TYPE_TOUCH);
                 break;
             case MotionEvent.ACTION_MOVE:
-                final int y = (int) event.getY();
-                int deltaY = this.mLastMotionY - y;
-                if (this.dispatchNestedPreScroll(0, deltaY, this.mScrollConsumed,
-                        this.mScrollOffset, ViewCompat.TYPE_TOUCH)) {
-                    deltaY -= this.mScrollConsumed[1];
+                //这里不能使用getY，因为getY是该组件在父布局中的Y坐标，他在父组件中不断变化
+                final int y = (int) event.getRawY();
+                int i2 = (int) event.getY();
+                Log.e(TAG, "移动 getRawY="+y+" getY="+i2);
+                int deltaY = mLastMotionY - y;
+                mLastMotionY = y;
+                //Log.e(TAG, "消耗前 deltaY="+deltaY);
+                if (dispatchNestedPreScroll(0, deltaY, mScrollConsumed,
+                        mScrollOffset, ViewCompat.TYPE_TOUCH)) {
+                    deltaY -= mScrollConsumed[1];
                 }
-                this.scrollBy(0, deltaY);
+                //Log.e(TAG, "消耗后 deltaY="+deltaY);
+                scrollBy(0, deltaY);
                 break;
             case MotionEvent.ACTION_UP:
-                this.stopNestedScroll(ViewCompat.TYPE_TOUCH);
+                stopNestedScroll(ViewCompat.TYPE_TOUCH);
                 break;
             case MotionEvent.ACTION_CANCEL:
-                this.stopNestedScroll(ViewCompat.TYPE_TOUCH);
+                stopNestedScroll(ViewCompat.TYPE_TOUCH);
                 break;
             default:
                 break;
@@ -111,18 +122,32 @@ public class GsNestedScrollingChildLayout extends LinearLayout implements Nested
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         if (this.mViewHeight <= 0) {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-            this.mViewHeight = this.getMeasuredHeight();
+            mViewHeight = getMeasuredHeight();
+            //Log.e(TAG, "mViewHeight="+mViewHeight);
         } else {
             heightMeasureSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-            this.mCanScrollY = this.getMeasuredHeight() - this.mViewHeight;
+            mCanScrollY = getMeasuredHeight() - mViewHeight;
+            Log.e(TAG, "getMeasuredHeight()="+getMeasuredHeight()
+                    +" mViewHeight="+mViewHeight +" mCanScrollY="+mCanScrollY);
         }
     }
 
     @Override
     public void scrollTo(int x, int y) {
-        y = y < 0 ? 0 : y;
-        y = y > this.mCanScrollY ? this.mCanScrollY : y;
+        Log.e(TAG, "scrollTo x="+x+" y="+y);
+        if(y < 0){
+            y = 0;
+        }
+        if(y > mCanScrollY){
+            y = mCanScrollY;
+        }
         super.scrollTo(x, y);
+    }
+
+    @Override
+    public void scrollBy(int x, int y) {
+        //Log.e(TAG, "scrollBy x="+x+" y="+y);
+        super.scrollBy(x, y);
     }
 }
