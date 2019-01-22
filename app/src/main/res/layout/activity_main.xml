@@ -16,28 +16,33 @@
         android:id="@+id/bt_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="自定义Nested Scrolling Parent Child"/>
+        android:textAllCaps="false"
+        android:text="自定义子、父布局，包含TextView"/>
 
     <Button
         android:id="@+id/bt_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="自定义Nested Scrolling Parent Child RecycleView"/>
+        android:textAllCaps="false"
+        android:text="自定义子、父布局，包含RecycleView"/>
 
     <Button
         android:id="@+id/bt_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="自定义Nested Scrolling Parent"/>
+        android:textAllCaps="false"
+        android:text="自定义父布局、NestedScrollView，包含TextView"/>
     <Button
         android:id="@+id/bt_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="自定义Nested Scrolling Parent RecyclerView"/>
+        android:textAllCaps="false"
+        android:text="自定义父布局、NestedScrollView，包含RecyclerView"/>
     <Button
         android:id="@+id/bt_scroll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="测试Scroll"/>
     <LinearLayout
         android:id="@+id/ll_1"

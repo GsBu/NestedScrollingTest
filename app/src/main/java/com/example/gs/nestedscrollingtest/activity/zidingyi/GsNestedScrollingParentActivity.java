@@ -1,9 +1,11 @@
-package com.example.gs.nestedscrollingtest;
+package com.example.gs.nestedscrollingtest.activity.zidingyi;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.example.gs.nestedscrollingtest.R;
 
 public class GsNestedScrollingParentActivity extends AppCompatActivity {
 

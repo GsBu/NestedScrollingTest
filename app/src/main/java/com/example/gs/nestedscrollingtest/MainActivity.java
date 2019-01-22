@@ -7,6 +7,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.gs.nestedscrollingtest.activity.zidingyi.GsNestedScrollingParentActivity;
+import com.example.gs.nestedscrollingtest.activity.zidingyi.GsNestedScrollingParentChildActivity;
+import com.example.gs.nestedscrollingtest.activity.zidingyi.GsNestedScrollingParentChildRecycleViewActivity;
+import com.example.gs.nestedscrollingtest.activity.zidingyi.GsNestedScrollingParentRecycleViewActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private final static String TAG = MainActivity.class.getSimpleName();
 

@@ -1,4 +1,4 @@
-package com.example.gs.nestedscrollingtest;
+package com.example.gs.nestedscrollingtest.activity.zidingyi;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,19 +7,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.gs.nestedscrollingtest.R;
 import com.example.gs.nestedscrollingtest.adapter.GsRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GsNestedScrollingParentChildRecycleViewActivity extends AppCompatActivity {
+public class GsNestedScrollingParentRecycleViewActivity extends AppCompatActivity {
 
     private RecyclerView rv1, rv2;
     private List<String> mDataList1 = new ArrayList<>();
     private GsRecyclerViewAdapter mAdapter1;
 
     public static void showActivity(Activity rootActivity) {
-        Intent intent = new Intent(rootActivity, GsNestedScrollingParentChildRecycleViewActivity.class);
+        Intent intent = new Intent(rootActivity, GsNestedScrollingParentRecycleViewActivity.class);
         //Bundle bundle = new Bundle();
         //intent.putExtras(bundle);
         rootActivity.startActivity(intent);
@@ -28,7 +29,7 @@ public class GsNestedScrollingParentChildRecycleViewActivity extends AppCompatAc
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gs_nested_scrolling_parent_child_recycle_view);
+        setContentView(R.layout.activity_gs_nested_scrolling_parent_recycle_view);
 
         rv1 = findViewById(R.id.rv_1);
 

@@ -16,10 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GsNestedScrollingParentChildActivity" />
-        <activity android:name=".GsNestedScrollingParentActivity" />
-        <activity android:name=".GsNestedScrollingParentRecycleViewActivity" />
-        <activity android:name=".GsNestedScrollingParentChildRecycleViewActivity"></activity>
+        <activity android:name=".activity.zidingyi.GsNestedScrollingParentChildActivity" />
+        <activity android:name=".activity.zidingyi.GsNestedScrollingParentActivity" />
+        <activity android:name=".activity.zidingyi.GsNestedScrollingParentRecycleViewActivity" />
+        <activity android:name=".activity.zidingyi.GsNestedScrollingParentChildRecycleViewActivity"></activity>
     </application>
 
 </manifest>

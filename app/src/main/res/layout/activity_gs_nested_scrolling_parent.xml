@@ -23,17 +23,10 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/large_text" />
-
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="@string/large_text" />
     </android.support.v4.widget.NestedScrollView>
 
 </com.example.gs.nestedscrollingtest.view.GsNestedScrollingParentLayout>
