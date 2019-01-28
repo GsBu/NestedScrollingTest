@@ -7,11 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context=".MainActivity">
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-    </android.support.design.widget.CoordinatorLayout>
     <Button
         android:id="@+id/bt_1"
         android:layout_width="wrap_content"
@@ -38,6 +34,12 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="自定义父布局、NestedScrollView，包含RecyclerView"/>
+    <Button
+        android:id="@+id/bt_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="CoordinatorLayout"/>
     <Button
         android:id="@+id/bt_scroll"
         android:layout_width="wrap_content"

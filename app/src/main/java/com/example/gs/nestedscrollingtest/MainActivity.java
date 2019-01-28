@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.gs.nestedscrollingtest.activity.coordinatorlayout.CoordinatorActivity;
 import com.example.gs.nestedscrollingtest.activity.zidingyi.GsNestedScrollingParentActivity;
 import com.example.gs.nestedscrollingtest.activity.zidingyi.GsNestedScrollingParentChildActivity;
 import com.example.gs.nestedscrollingtest.activity.zidingyi.GsNestedScrollingParentChildRecycleViewActivity;
@@ -15,7 +16,7 @@ import com.example.gs.nestedscrollingtest.activity.zidingyi.GsNestedScrollingPar
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private final static String TAG = MainActivity.class.getSimpleName();
 
-    private Button bt1, bt2, bt3, bt4, btScroll;
+    private Button bt1, bt2, bt3, bt4, bt5, btScroll;
     private TextView tv1;
     private LinearLayout ll1;
 
@@ -30,11 +31,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt2 = findViewById(R.id.bt_2);
         bt3 = findViewById(R.id.bt_3);
         bt4 = findViewById(R.id.bt_4);
+        bt5 = findViewById(R.id.bt_5);
         btScroll = findViewById(R.id.bt_scroll);
         bt1.setOnClickListener(this);
         bt2.setOnClickListener(this);
         bt3.setOnClickListener(this);
         bt4.setOnClickListener(this);
+        bt5.setOnClickListener(this);
         btScroll.setOnClickListener(this);
 
         tv1.postDelayed(new Runnable() {
@@ -60,6 +63,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.bt_4:
                 GsNestedScrollingParentRecycleViewActivity.showActivity(this);
+                break;
+            case R.id.bt_5:
+                CoordinatorActivity.showActivity(this);
                 break;
             case R.id.bt_scroll:
                 if(ll1.getScrollX() == 0 && ll1.getScrollY() == 0){
